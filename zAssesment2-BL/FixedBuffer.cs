@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Assesment2_BL
 {
     /// <summary>
-    /// exposed instance to create a buffer store data in it
+    /// Type Fixed buffer is Wrapper for System.Collections.Generic.Queue 
     /// </summary>
     public class FixedBuffer
     {

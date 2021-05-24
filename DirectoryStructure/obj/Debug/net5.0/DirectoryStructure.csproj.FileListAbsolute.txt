@@ -14,3 +14,6 @@ C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\Di
 C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\ref\DirectoryStructure.dll
 C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.pdb
 C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.genruntimeconfig.cache
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\Assesment2-BL.dll
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\Assesment2-BL.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.csproj.CopyComplete

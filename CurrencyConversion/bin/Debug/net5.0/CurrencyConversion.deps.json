@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "CurrencyConversion/1.0.0": {
+        "dependencies": {
+          "Assesment2-BL": "1.0.0"
+        },
         "runtime": {
           "CurrencyConversion.dll": {}
+        }
+      },
+      "Assesment2-BL/1.0.0": {
+        "runtime": {
+          "Assesment2-BL.dll": {}
         }
       }
     }
   },
   "libraries": {
     "CurrencyConversion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Assesment2-BL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

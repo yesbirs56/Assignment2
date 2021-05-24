@@ -1,82 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Assesment2_BL;
+using System;
 
 namespace LatestInBuffer
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Queue<string> buffer = null;
-            int n = 0;
+            FixedBuffer buffer = null;
+            
+
             Console.WriteLine("Enter the buffer size");
-            try
+
+            string bufferSize = Console.ReadLine();
+            bool isValidN = Int32.TryParse(bufferSize, out int n);
+            if (!isValidN)
             {
-                n = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (FormatException)
-            {
-                string msg = "The entered value is not an integer";
-                Console.WriteLine(msg);
-                return;
-                
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("The entered value exceeds the integer maximum value");
-                return;
+                Console.WriteLine($"{bufferSize} is not a valid integer");
             }
 
             try
             {
-                buffer = new Queue<string>(n);
+                buffer = new FixedBuffer(n);
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("Buffer size cannot be negative");
                 return;
             }
+            catch (IndexOutOfRangeException exc)
+            {
+                Console.WriteLine($"{exc.Message}");
+            }
 
             while (true)
             {
-                Console.WriteLine("Enter the Value");
-                string temp = Console.ReadLine();
-                if (temp == "?")
+                Console.Write($"Enter the Data  : ");
+                string data = Console.ReadLine();
+                if (data == "?")
                 {
-                    PrintBuffer(buffer);
                     break;
                 }
-                if (buffer.Count == n)
+                if (buffer.IsBufferFull())
                 {
-                    Console.WriteLine($"The buffer is full Want to overwrite oldest value = {buffer.Peek()} ?(y/n)");
-                    char ch = Convert.ToChar(Console.ReadLine().ToLower());
-                    if (ch == 'y')
+                    Console.Write($"Buffer is full want to over write oldest value {buffer.GetOldestData()} ?(y/n) : ");
+                    string ans = Console.ReadLine().ToLower();
+                    if (ans != "n")
                     {
-                        buffer.Dequeue();
+                        buffer.OverWriteOldestData(data);
                     }
-                    else
-                    {
-                        continue;
-                    }
+                    continue;
                 }
-                buffer.Enqueue(temp);
+                try
+                {
+                    buffer.AddData(data);
+                    
+                }
+                catch(InvalidOperationException exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
+               
+                
             }
+
+            string[] values = buffer.GetBufferData();
+            PrintBuffer(values);
         }
 
-        // Print maximum latest 10 values entered
-        private static void PrintBuffer(Queue<string> buffer)
+        // Print The Buffer Data
+        private static void PrintBuffer(string[] buffer)
         {
-            int count = buffer.Count;
-            int n = count - 10;
-            int i = 0;
-            Console.WriteLine("Latest 10 Values in Buffer are : ");
+            Console.WriteLine("The Data in buffer ");
             foreach (string data in buffer)
             {
-                if (i >= n)
-                {
-                    Console.Write(data + " ");
-                }
-                i++;
+                Console.Write($"{data} ");
             }
         }
     }

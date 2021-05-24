@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Assesment2-BL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Assesment2-BL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assesment2-BL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Assesment2-BL/1.0.0": {
+      "type": "project",
+      "path": "../zAssesment2-BL/Assesment2-BL.csproj",
+      "msbuildProject": "../zAssesment2-BL/Assesment2-BL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Assesment2-BL >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Yesbirs\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Yesbirs\\source\\repos\\Assignment1\\zAssesment2-BL\\Assesment2-BL.csproj": {
+              "projectPath": "C:\\Users\\Yesbirs\\source\\repos\\Assignment1\\zAssesment2-BL\\Assesment2-BL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

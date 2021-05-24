@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Assesment2_BL;
 
 namespace DirectoryStructure
 {
@@ -10,57 +11,29 @@ namespace DirectoryStructure
             Console.WriteLine("Enter the Directory path");
             string path = Console.ReadLine();
             path = $@"{path}";
-            GetStructure(path, "");
-        }
-
-        //A recursive function accepts the path of directory and spaces
-        // which signifies the spaces required in x depth of folder and print the structure of directory
-        private static void GetStructure(string path, string spaces)
-        {
-            DirectoryInfo root = null;
             try
             {
-                root = new DirectoryInfo(path);
+                DirectoryTree.GetStructure(path);
             }
-            catch (ArgumentException)
+            catch (ArgumentException exc)
             {
-                Console.Write("Path is not given  ");
-                return;
+                Console.WriteLine(exc.Message);
             }
-            catch (PathTooLongException)
+            catch (DirectoryNotFoundException exc)
             {
-                Console.Write("Path is too Long  ");
-                return;
+                Console.WriteLine("Directory does not exist " + exc.Message);
             }
-
-            FileInfo[] files = null;
-            try
+            catch(UnauthorizedAccessException exc)
             {
-                files = root.GetFiles();
+                Console.WriteLine(exc.Message);
             }
-            catch (DirectoryNotFoundException)
+            catch(PathTooLongException exc)
             {
-                Console.Write("Path Does not Exist ");
-                return;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Console.WriteLine($"{spaces} ( UnAuthorized access in {root.Name} directory )");
-                return;
-            }
-
-            foreach (FileInfo file in files)
-            {
-                Console.WriteLine($"{spaces + " -"}{file.Name}");
-            }
-
-            DirectoryInfo[] folders = root.GetDirectories();
-            foreach (DirectoryInfo folder in folders)
-            {
-                Console.WriteLine($"{spaces + "--"}{folder.Name}");
-                // Calling recursion on subfolder (depth first approach) with added spaces
-                GetStructure(path + $@"\{folder.Name}", spaces + "  ");
+                Console.WriteLine(exc.Message);
             }
         }
+
+        
+       
     }
 }

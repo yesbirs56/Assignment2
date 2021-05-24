@@ -1,0 +1,12 @@
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\bin\Debug\net5.0\Assesment2-BL.deps.json
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\bin\Debug\net5.0\Assesment2-BL.dll
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\bin\Debug\net5.0\ref\Assesment2-BL.dll
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\bin\Debug\net5.0\Assesment2-BL.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.AssemblyInfoInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.AssemblyInfo.cs
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.csproj.CoreCompileInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.dll
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\ref\Assesment2-BL.dll
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\zAssesment2-BL\obj\Debug\net5.0\Assesment2-BL.csprojAssemblyReference.cache

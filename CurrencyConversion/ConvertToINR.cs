@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
+using Assesment2_BL;
 
 namespace CurrencyConversion
 {
@@ -9,8 +11,9 @@ namespace CurrencyConversion
         {
             string path = $@"{Directory.GetCurrentDirectory()}\currency.dat";
 
-            FileInfo currencyData = new FileInfo(path);
-            if (currencyData.Exists)
+            
+            CurrencyConverter currencyData = new CurrencyConverter(path); ;
+            if (currencyData.IsDataExist())
             {
                 Console.WriteLine("Do you want to Continue with existing Data Or Create New One ? (y/n)");
                 char ch = 'n';
@@ -18,77 +21,57 @@ namespace CurrencyConversion
                 {
                     ch = Convert.ToChar(Console.ReadLine());
                 }
-                catch (FormatException exception)
+                catch (FormatException exc)
                 {
-                    string msg = "The entered value is not a character";
-                    Console.WriteLine(exception.Message);
+                    
+                    Console.WriteLine(exc.Message);
                 }
-
+                
                 if (ch == 'y')
                 {
-                    WriteDataIntoFile(currencyData);
+                    Console.WriteLine("Enter the symbol and rate of foreign currency ");
+                    Dictionary<string,double> data =  TakeDataInput();
+                    currencyData.WriteDataIntoFile(data);
                 }
             }
             else
             {
-                WriteDataIntoFile(currencyData);
+                Console.WriteLine("Enter the symbol and rate of foreign currency ");
+                Dictionary<string, double> data = TakeDataInput();
+                currencyData.WriteDataIntoFile(data);
             }
 
-            Conversion(currencyData);
+            Console.Write("Enter The Symbol which you want to convert : ");
+            string symbol = Console.ReadLine().ToUpper();
+
+            Console.Write("Enter The amount of the currency : ");
+            string rateString = Console.ReadLine();
+            bool isValidRate = Double.TryParse(rateString, out double amount);
+            if (!isValidRate)
+            {
+                Console.WriteLine($"{rateString} is not a valid Double input ");
+            }
+            
+            double amountINR = currencyData.GetAmountINR(symbol, amount);
+            // if amount is -1 that mean the provided symbol is not registered
+            if(amountINR == -1)
+            {
+                Console.WriteLine("The currency symbol provided is not registered: ");
+            }
+            Console.WriteLine($"The Total amount in INR is {amountINR:0.00}");
+            
+
+            
         }
 
-        private static void Conversion(FileInfo currencyData)
+       
+
+        //Function To Take Data as input from User like symbol and rate to be stored in file
+        // and return the Dictionary containing all the data
+        private static Dictionary<string,double> TakeDataInput()
         {
-            Console.Write("Enter the foreign currency Symbol  : ");
-            string symbol = Console.ReadLine();
-            Console.Write("Enter the Amount: ");
-            double amount = 0;
-            try
-            {
-                amount = Convert.ToDouble(Console.ReadLine());
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Entered the wrong value");
-            }
-
-            double rate = GetRate(currencyData, symbol);
-            if (rate == -1)
-            {
-                Console.WriteLine("This currency symbol is not registered");
-                return;
-            }
-
-            double inr = ConvertCurrency(amount, rate);
-            Console.WriteLine($"{amount} {symbol} is equal to : {String.Format("{0:0.00}", inr)} INR");
-        }
-
-        private static double GetRate(FileInfo currencyData, string symbol)
-        {
-            BinaryReader br = new BinaryReader(currencyData.OpenRead());
-            while (br.PeekChar() != -1)
-            {
-                string sym = br.ReadString();
-                if (sym == symbol)
-                {
-                    double rate = br.ReadDouble();
-                    br.Close();
-                    return rate;
-                }
-                br.ReadDouble();
-            }
-            br.Close();
-            return -1;
-        }
-
-        private static double ConvertCurrency(double amount, double rate)
-        {
-            return amount * rate;
-        }
-
-        private static void WriteDataIntoFile(FileInfo currencyData)
-        {
-            BinaryWriter bw = new BinaryWriter(currencyData.OpenWrite());
+            Dictionary<string, double> data = new Dictionary<string, double>();
+            
             char ch = 'y';
             int count = 1;
             while (ch == 'y')
@@ -97,8 +80,16 @@ namespace CurrencyConversion
                 string symbol = Console.ReadLine();
                 Console.Write("Enter Currency Rate: ");
                 double rate = Convert.ToDouble(Console.ReadLine());
-                bw.Write(symbol);
-                bw.Write(rate);
+
+                //if user already enter this symbol then donot accept the input
+                if (data.ContainsKey(symbol))
+                {
+                    Console.WriteLine("This symbol is already exist ");
+                    continue;
+
+                }
+                data.Add(symbol, rate);
+
                 if (count >= 5)
                 {
                     Console.Write("More Enteries ?(y/n) :");
@@ -106,7 +97,8 @@ namespace CurrencyConversion
                 }
                 count++;
             }
-            bw.Close();
+            return data;
+            
         }
     }
 }

@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 
-namespace TitleCase
+namespace Assesment2_BL
 {
-    internal class TitleCase
+    /// <summary>
+    /// The static class whic contains static members to convert String into
+    /// Title case except is word are conjunctions, articles, prepositions.
+    /// </summary>
+    public static class TitleCase
     {
-        //List contains all the word which are to be ignored
-        private static readonly List<string> ignoreWords = new List<string>()
+        // List of words are to be ignored
+        private static readonly List<string> _ignoreWords = new List<string>()
             {
                 "and",
                 "or",
@@ -31,19 +33,13 @@ namespace TitleCase
                 "on"
             };
 
-        private static void Main(string[] args)
-        {
-            Console.WriteLine("Enter a sentence ");
-            string sentence = Console.ReadLine();
-            Console.WriteLine();
-            String result = ConvertString(sentence);
-            Console.WriteLine("----------------------------------------Converted String --------------------------------------");
-            Console.WriteLine();
-            Console.WriteLine(result);
-        }
 
-        // Convert The Sentence into Title Case and return converted string
-        private static string ConvertString(string sentence)
+        /// <summary>
+        /// Convert the sentence into TitleCase 
+        /// </summary>
+        /// <param name="sentence"></param>
+        /// <returns>converted title case string </returns>
+        public static string GetConvertedString(string sentence)
         {
             // Split the sentence by spaces and gives array of words string
             string[] words = sentence.Split(" ");
@@ -52,7 +48,7 @@ namespace TitleCase
             StringBuilder result = new StringBuilder("");
             foreach (string word in words)
             {
-                if (!ignoreWords.Contains(word))
+                if (!_ignoreWords.Contains(word))
                 {
                     string temp = word.Substring(0, 1).ToUpper() + word[1..];
                     result.Append(temp + " ");

@@ -1,0 +1,16 @@
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\TitleCase.exe
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\TitleCase.deps.json
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\TitleCase.runtimeconfig.json
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\TitleCase.runtimeconfig.dev.json
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\TitleCase.dll
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\ref\TitleCase.dll
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\TitleCase.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.csprojAssemblyReference.cache
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.AssemblyInfoInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.AssemblyInfo.cs
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.csproj.CoreCompileInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.dll
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\ref\TitleCase.dll
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.genruntimeconfig.cache

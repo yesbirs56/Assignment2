@@ -1,0 +1,16 @@
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\CurrencyConversion.exe
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\CurrencyConversion.deps.json
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\CurrencyConversion.runtimeconfig.json
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\CurrencyConversion.runtimeconfig.dev.json
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\CurrencyConversion.dll
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\ref\CurrencyConversion.dll
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\bin\Debug\net5.0\CurrencyConversion.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.csprojAssemblyReference.cache
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.AssemblyInfoInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.AssemblyInfo.cs
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.csproj.CoreCompileInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.dll
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\ref\CurrencyConversion.dll
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\CurrencyConversion\obj\Debug\net5.0\CurrencyConversion.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\DirectoryStructure.exe
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\DirectoryStructure.deps.json
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\DirectoryStructure.runtimeconfig.json
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\DirectoryStructure.runtimeconfig.dev.json
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\DirectoryStructure.dll
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\ref\DirectoryStructure.dll
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\bin\Debug\net5.0\DirectoryStructure.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.csprojAssemblyReference.cache
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.AssemblyInfoInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.AssemblyInfo.cs
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.csproj.CoreCompileInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.dll
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\ref\DirectoryStructure.dll
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\DirectoryStructure\obj\Debug\net5.0\DirectoryStructure.genruntimeconfig.cache

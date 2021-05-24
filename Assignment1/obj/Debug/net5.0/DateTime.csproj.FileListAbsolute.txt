@@ -1,0 +1,16 @@
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateTime.exe
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateTime.deps.json
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateTime.runtimeconfig.json
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateTime.runtimeconfig.dev.json
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateTime.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\ref\DateTime.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateTime.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.AssemblyInfoInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.AssemblyInfo.cs
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.csproj.CoreCompileInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\ref\DateTime.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.genruntimeconfig.cache
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateTime.csprojAssemblyReference.cache

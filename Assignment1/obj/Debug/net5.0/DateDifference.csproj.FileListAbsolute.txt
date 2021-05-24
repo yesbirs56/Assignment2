@@ -1,0 +1,16 @@
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateDifference.exe
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateDifference.deps.json
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateDifference.runtimeconfig.json
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateDifference.runtimeconfig.dev.json
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateDifference.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\ref\DateDifference.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\bin\Debug\net5.0\DateDifference.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.csprojAssemblyReference.cache
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.AssemblyInfoInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.AssemblyInfo.cs
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.csproj.CoreCompileInputs.cache
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\ref\DateDifference.dll
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\Assignment1\obj\Debug\net5.0\DateDifference.genruntimeconfig.cache

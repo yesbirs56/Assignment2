@@ -28,10 +28,14 @@ namespace LatestInBuffer
                 Console.WriteLine("Buffer size cannot be negative");
                 return;
             }
-            catch (IndexOutOfRangeException exc)
+            
+            catch(Exception exc)
             {
                 Console.WriteLine($"{exc.Message}");
+                return;
             }
+
+            
 
             while (true)
             {
@@ -43,27 +47,32 @@ namespace LatestInBuffer
                 }
                 if (buffer.IsBufferFull())
                 {
+                    
                     Console.Write($"Buffer is full want to over write oldest value {buffer.GetOldestData()} ?(y/n) : ");
                     string ans = Console.ReadLine().ToLower();
                     if (ans != "n")
                     {
-                        buffer.OverWriteOldestData(data);
+                        
+                        try
+                        {
+                            buffer.OverWriteOldestData(data);
+
+                        }
+                        catch (InvalidOperationException exc)
+                        {
+                            Console.WriteLine(exc.Message);
+                            return;
+                        }
+                        catch (Exception exc)
+                        {
+                            Console.WriteLine(exc.Message);
+                            return;
+                        }
                     }
                     continue;
                 }
-                try
-                {
-                    buffer.AddData(data);
-                    
-                }
-                catch(InvalidOperationException exc)
-                {
-                    Console.WriteLine(exc.Message);
-                }
-                catch (Exception exc)
-                {
-                    Console.WriteLine(exc.Message);
-                }
+                buffer.AddData(data);
+                
                
                 
             }

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatestInBuffer", "LatestInB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConversion", "CurrencyConversion\CurrencyConversion.csproj", "{C6E9CA71-F21C-46A4-9351-87B2279C0ECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assesment2-BL", "zAssesment2-BL\Assesment2-BL.csproj", "{C131CE53-F39C-41F5-9C31-E1A360AE2207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assesment2-BL", "zAssesment2-BL\Assesment2-BL.csproj", "{C131CE53-F39C-41F5-9C31-E1A360AE2207}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

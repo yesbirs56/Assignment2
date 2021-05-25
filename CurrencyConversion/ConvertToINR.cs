@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using Assesment2_BL;
+using System;
 using System.Collections.Generic;
-using Assesment2_BL;
+using System.IO;
 
 namespace CurrencyConversion
 {
@@ -11,7 +11,6 @@ namespace CurrencyConversion
         {
             string path = $@"{Directory.GetCurrentDirectory()}\currency.dat";
 
-            
             CurrencyConverter currencyData = new CurrencyConverter(path); ;
             if (currencyData.IsDataExist())
             {
@@ -23,14 +22,13 @@ namespace CurrencyConversion
                 }
                 catch (FormatException exc)
                 {
-                    
                     Console.WriteLine(exc.Message);
                 }
-                
+
                 if (ch == 'y')
                 {
                     Console.WriteLine("Enter the symbol and rate of foreign currency ");
-                    Dictionary<string,double> data =  TakeDataInput();
+                    Dictionary<string, double> data = TakeDataInput();
                     currencyData.WriteDataIntoFile(data);
                 }
             }
@@ -51,27 +49,22 @@ namespace CurrencyConversion
             {
                 Console.WriteLine($"{rateString} is not a valid Double input ");
             }
-            
+
             double amountINR = currencyData.GetAmountINR(symbol, amount);
             // if amount is -1 that mean the provided symbol is not registered
-            if(amountINR == -1)
+            if (amountINR == -1)
             {
                 Console.WriteLine("The currency symbol provided is not registered: ");
             }
             Console.WriteLine($"The Total amount in INR is {amountINR:0.00}");
-            
-
-            
         }
-
-       
 
         //Function To Take Data as input from User like symbol and rate to be stored in file
         // and return the Dictionary containing all the data
-        private static Dictionary<string,double> TakeDataInput()
+        private static Dictionary<string, double> TakeDataInput()
         {
             Dictionary<string, double> data = new Dictionary<string, double>();
-            
+
             char ch = 'y';
             int count = 1;
             while (ch == 'y')
@@ -86,7 +79,6 @@ namespace CurrencyConversion
                 {
                     Console.WriteLine("This symbol is already exist ");
                     continue;
-
                 }
                 data.Add(symbol, rate);
 
@@ -98,7 +90,6 @@ namespace CurrencyConversion
                 count++;
             }
             return data;
-            
         }
     }
 }

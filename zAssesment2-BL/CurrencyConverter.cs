@@ -28,6 +28,10 @@ namespace Assesment2_BL
         public void WriteDataIntoFile(Dictionary<string, double> data)
         {
             FileInfo currencyData = new FileInfo(this._path);
+            if (IsDataExist())
+            {
+                currencyData.Delete();
+            }
             BinaryWriter bw = new BinaryWriter(currencyData.OpenWrite());
 
             foreach (var item in data)
@@ -55,25 +59,61 @@ namespace Assesment2_BL
             double inr = rate * amount;
             return inr;
         }
-
-        // private method for getting the rate of the symbol
         private double GetRate(string symbol)
         {
+            FileInfo currencyData = new FileInfo(this._path);
+            using (BinaryReader br = new BinaryReader(currencyData.OpenRead()))
+            {
+                while (br.PeekChar() != -1)
+                {
+                    string sym = br.ReadString();
+                    if (sym == symbol)
+                    {
+                        double rate = br.ReadDouble();
+                        return rate;
+                    }
+                    br.ReadDouble();
+                }
+                
+            }
+               
+            return -1;
+
+        }
+
+        // private method for getting the rate of the symbol
+        public bool IsCurrencyRegistered(string symbol)
+        {
+            FileInfo currencyData = new FileInfo(this._path);
+            using (BinaryReader br = new BinaryReader(currencyData.OpenRead()))
+            {
+                while (br.PeekChar() != -1)
+                {
+                    string sym = br.ReadString();
+                    if (sym == symbol)
+                    {
+                        return true;
+                    }
+                    br.ReadDouble();
+                }
+            }
+            return false;
+        }
+
+
+        public List<string> GetSymbols()
+        {
+            List<string> symbols = new List<string>();
             FileInfo currencyData = new FileInfo(this._path);
             BinaryReader br = new BinaryReader(currencyData.OpenRead());
             while (br.PeekChar() != -1)
             {
-                string sym = br.ReadString();
-                if (sym == symbol)
-                {
-                    double rate = br.ReadDouble();
-                    br.Close();
-                    return rate;
-                }
+                string symbol = br.ReadString();
+                symbols.Add(symbol);
                 br.ReadDouble();
             }
             br.Close();
-            return -1;
+            return symbols;
         }
 
         /// <summary>

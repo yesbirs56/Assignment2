@@ -6,6 +6,8 @@ namespace Assignment1
 {
     internal class DateDifference
     {
+        private static readonly DateTime _today = DateTime.Today;
+        
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter the Date in MM/dd/yyyy format :");
@@ -13,89 +15,106 @@ namespace Assignment1
             Console.WriteLine(" Write 03/01/2001 ");
             Console.WriteLine();
 
-            DateTime dateFrom = TakeDateInput("Enter Date from (MM/dd/yyyy) : ");
 
 
-            DateTime dateTo = new DateTime();
-            bool isValid = false;
-            
-
-            while (!isValid)
+            DateTime startDate = TakeDateInput("Enter Start Date : ");
+            while (!ValidateStartDate(startDate))
             {
-                
-                try
-                {
-                    dateTo = TakeDateInput("Enter Date To (MM/dd/yyyy) : ");
-                    int compareResult = dateFrom.CompareTo(dateTo);
-
-                    if (compareResult > 0)
-                    {
-                        Console.WriteLine("The End Date cannot be earlier then From Date :");
-                        continue;
-                    }
-                    
-                    isValid = true;
-                }
-                catch (FormatException exc)
-                {
-                    Console.WriteLine(exc.Message);
-                }
-                catch (ArgumentOutOfRangeException exc)
-                {
-                    Console.WriteLine("Date Does not Exist enter Correct date" + exc.Message);
-                }
-                catch (IndexOutOfRangeException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch(Exception exc)
-                {
-                    Console.WriteLine($"{exc.Message}");
-                }
+                Console.WriteLine("The StartDate date should occur before Today's Date ");
+                startDate = TakeDateInput("Enter Start Date : ");
             }
+            DateTime endDate = TakeDateInput("Enter End Date : ");
+            while (!ValidateEndDate(endDate, startDate))
+            {
+                Console.WriteLine("The End date should occur later then Start Date ");
+                endDate = TakeDateInput("Enter End Date : ");
+            }
+
             
-            DateDiff diff = new DateDiff(dateFrom, dateTo);
+            DateDiff diff = new DateDiff(startDate, endDate);
 
             Console.WriteLine($" Total number of days {diff.TotalDays}");
             Console.WriteLine($"Months: {diff.Years * 12 + diff.Months} : Days:{diff.Days}");
             Console.WriteLine($"Years :{diff.Years}  Months: {diff.Months} Days:{diff.Days}");
         }
         // The Function used take date input
-        public static DateTime TakeDateInput(string msg = "")
-        {
-            try
-            {
-                Console.Write(msg);
-                string date1 = Console.ReadLine().Trim();
-                string[] date1Details = date1.Split("/");
-                string[] formats = { "MM/dd/yyyy" };
-                
-                
-                int month = Convert.ToInt32(date1Details[0]);
-                int day = Convert.ToInt32(date1Details[1]);
-                int year = Convert.ToInt32(date1Details[2]);
 
-                DateTime date = new DateTime(year, month, day);
-                return date;
+        private static DateTime TakeDateInput(string msg )
+        {
+            string dateString = "";
+            Console.Write(msg);
+            dateString = Console.ReadLine();
+            while (!ValidateDateString(dateString)){
+                Console.WriteLine("You have enter the wrong date please enter corect date in format MM/dd/yyyyy :");
+                Console.Write(msg);
+                dateString = Console.ReadLine();
+
             }
-            catch (FormatException)
+
+            string[] dateDetails = dateString.Split("/");
+            int month = Convert.ToInt32(dateDetails[0].Trim());
+            int day = Convert.ToInt32(dateDetails[1].Trim());
+            int year = Convert.ToInt32(dateDetails[2].Trim());
+
+
+            return new DateTime(year,month,day);
+
+            
+
+        }
+        private static bool ValidateStartDate(DateTime startDate)
+        {
+            if (startDate.CompareTo(_today)>=0){
+                return false;
+            }
+            return true;
+        }
+
+        private static bool ValidateEndDate(DateTime endDate, DateTime startDate)
+        {
+            if (endDate.CompareTo(startDate) <= 0)
             {
-                
-                throw;
+                return false;
             }
-            catch (ArgumentOutOfRangeException)
+            return true;
+        }
+
+
+
+
+        private static bool ValidateDateString(string dateString)
+        {
+            if (dateString.Length == 0)
             {
-                
-                throw;
+                return false;
             }
-            catch (IndexOutOfRangeException)
+            string[] dateDetails = dateString.Split("/");
+            
+
+            if (dateDetails.Length != 3)
             {
-                throw;
+                return false;
             }
-            catch(Exception )
+            int day = -1;
+            int year = -1;
+            
+            bool isValidInt = Int32.TryParse(dateDetails[0].Trim(), out int month); 
+            isValidInt = isValidInt && Int32.TryParse(dateDetails[1].Trim(), out  day);
+            isValidInt = isValidInt && Int32.TryParse(dateDetails[2].Trim(), out  year);
+            if (!isValidInt)
             {
-                throw;
+                return false;
             }
+            bool isValid = (month >= 1 && month <= 12);
+            isValid = isValid && (day >= 1 && day <= DateDiff.DaysInMonth[month - 1]);
+            isValid = isValid && (year >= 1 && year <=9999);
+
+            if (!isValid)
+            {
+                return false;
+            }
+            return true;
+
         }
     }
 }

@@ -14,3 +14,6 @@ C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.d
 C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\ref\TitleCase.dll
 C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.pdb
 C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.genruntimeconfig.cache
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\Assesment2-BL.dll
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\bin\Debug\net5.0\Assesment2-BL.pdb
+C:\Users\Yesbirs\source\repos\Assignment1\TitleCase\obj\Debug\net5.0\TitleCase.csproj.CopyComplete

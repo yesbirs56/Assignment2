@@ -4,7 +4,7 @@ namespace Assesment2_BL
 {
     public class DateDiff
     {
-        private readonly static int[] _daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        public readonly static int[] DaysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         readonly private DateTime _startDate;
         readonly private DateTime _endDate;
 
@@ -85,7 +85,7 @@ namespace Assesment2_BL
         {
             if (IsLeapYear(this._endDate.Year))
             {
-                _daysInMonth[1] = 29;
+                DaysInMonth[1] = 29;
             }
             int yearDiff = _endDate.Year - _startDate.Year;
             int monthDiff = (_endDate.Month - _startDate.Month);
@@ -95,7 +95,7 @@ namespace Assesment2_BL
             if (dayDiff < 0)
             {
                 monthDiff--;
-                dayDiff = _daysInMonth[(this._endDate.Month + 12 - 2) % 12] - this._startDate.Day + this._endDate.Day;
+                dayDiff = DaysInMonth[(this._endDate.Month + 12 - 2) % 12] - this._startDate.Day + this._endDate.Day;
             }
             //If monthDiff is negative year is decrease
             if (monthDiff < 0)

@@ -40,6 +40,12 @@ namespace Assesment2_BL
         /// <returns>converted title case string </returns>
         public static string GetConvertedString(string sentence)
         {
+            sentence = sentence.Trim();
+
+            if(sentence.Length == 0)
+            {
+                return "";
+            }
             // Split the sentence by spaces and gives array of words string
             string[] words = sentence.Split(" ");
             // StringBuilder is used because there is lot of string concatinations

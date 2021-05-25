@@ -8,34 +8,40 @@ namespace DirectoryStructure
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Enter the Directory path");
-            string path = Console.ReadLine();
-            path = $@"{path}";
             string structure = "";
-            try
+            bool isValid = false;
+            do
             {
-               structure =  DirectoryTree.GetStructure(path);
-            }
-            catch (ArgumentException exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-            catch (DirectoryNotFoundException exc)
-            {
-                Console.WriteLine("Directory does not exist " + exc.Message);
-            }
-            catch(UnauthorizedAccessException exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-            catch(PathTooLongException exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-            catch(Exception exc)
-            {
-                Console.WriteLine($"{exc.Message}");
-            }
+                Console.WriteLine("Enter the Directory path");
+                string path = Console.ReadLine();
+                path = $@"{path}";
+
+                try
+                {
+                    structure = DirectoryTree.GetStructure(path);
+                    isValid = true;
+                }
+                catch (ArgumentException exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
+                catch (DirectoryNotFoundException exc)
+                {
+                    Console.WriteLine("Directory does not exist " + exc.Message);
+                }
+                catch (UnauthorizedAccessException exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
+                catch (PathTooLongException exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine($"{exc.Message}");
+                }
+            } while (!isValid);
 
             Console.WriteLine(structure);
         }

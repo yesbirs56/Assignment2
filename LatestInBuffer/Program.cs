@@ -7,35 +7,7 @@ namespace LatestInBuffer
     {
         public static void Main(string[] args)
         {
-            FixedBuffer buffer;
-            
-
-            Console.WriteLine("Enter the buffer size");
-
-            string bufferSize = Console.ReadLine();
-            bool isValidN = Int32.TryParse(bufferSize, out int n);
-            if (!isValidN)
-            {
-                Console.WriteLine($"{bufferSize} is not a valid integer");
-            }
-
-            try
-            {
-                buffer = new FixedBuffer(n);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("Buffer size cannot be negative");
-                return;
-            }
-            
-            catch(Exception exc)
-            {
-                Console.WriteLine($"{exc.Message}");
-                return;
-            }
-
-            
+            FixedBuffer buffer = new FixedBuffer(10);
 
             while (true)
             {
@@ -48,7 +20,7 @@ namespace LatestInBuffer
                 if (buffer.IsBufferFull())
                 {
                     
-                    Console.Write($"Buffer is full want to over write oldest value {buffer.GetOldestData()} ?(y/n) : ");
+                    Console.Write($"Buffer is full want to over write oldest value \"{buffer.GetOldestData()}\" ?(y/n) : ");
                     string ans = Console.ReadLine().ToLower();
                     if (ans != "n")
                     {

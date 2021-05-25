@@ -44,6 +44,10 @@ namespace Assesment2_BL
             {
                 throw;
             }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /// <summary>

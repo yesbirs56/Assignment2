@@ -7,7 +7,7 @@ namespace LatestInBuffer
     {
         public static void Main(string[] args)
         {
-            FixedBuffer buffer = null;
+            FixedBuffer buffer;
             
 
             Console.WriteLine("Enter the buffer size");

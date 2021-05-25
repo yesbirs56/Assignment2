@@ -24,6 +24,10 @@ namespace CurrencyConversion
                 {
                     Console.WriteLine(exc.Message);
                 }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
 
                 if (ch == 'y')
                 {

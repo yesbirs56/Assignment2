@@ -32,6 +32,10 @@ namespace DirectoryStructure
             {
                 Console.WriteLine(exc.Message);
             }
+            catch(Exception exc)
+            {
+                Console.WriteLine($"{exc.Message}");
+            }
 
             Console.WriteLine(structure);
         }

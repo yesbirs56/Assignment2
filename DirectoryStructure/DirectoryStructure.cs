@@ -11,9 +11,10 @@ namespace DirectoryStructure
             Console.WriteLine("Enter the Directory path");
             string path = Console.ReadLine();
             path = $@"{path}";
+            string structure = "";
             try
             {
-                DirectoryTree.GetStructure(path);
+               structure =  DirectoryTree.GetStructure(path);
             }
             catch (ArgumentException exc)
             {
@@ -31,6 +32,8 @@ namespace DirectoryStructure
             {
                 Console.WriteLine(exc.Message);
             }
+
+            Console.WriteLine(structure);
         }
 
         

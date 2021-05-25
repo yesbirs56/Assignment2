@@ -20,11 +20,15 @@ namespace Assesment2_BL
         /// <exception cref="PathTooLongException">When Path is Too Long </exception>
         /// <exception cref="UnauthorizedAccessException">When access a unauthorised directory </exception>
         /// <param name="path">Contains the path of the Directory</param>
-   
-        public static void GetStructure(string path)
+
+        private static StringBuilder structure = new StringBuilder("");
+        public static string GetStructure(string path)
         {
             PrintTree(path,"");
+            return structure.ToString();
         }
+
+        
 
 
         // Recursive function To Print the structure of the Tree 
@@ -64,15 +68,19 @@ namespace Assesment2_BL
 
             foreach (FileInfo file in files)
             {
-                Console.WriteLine($"{spaces + " -"}{file.Name}");
+                // Console.WriteLine($"{spaces + " -"}{file.Name}");
+                structure.AppendLine($"{spaces + " -"}{file.Name}");
+
             }
 
             DirectoryInfo[] folders = root.GetDirectories();
             foreach (DirectoryInfo folder in folders)
             {
-                Console.WriteLine($"{spaces + "--"}{folder.Name}");
+                //Console.WriteLine($"{spaces + "--"}{folder.Name}");
+                structure.AppendLine( $"{spaces + "--"}{folder.Name}");
                 // Calling recursion on subfolder (depth first approach) with added spaces
                 PrintTree(path + $@"\{folder.Name}", spaces + "  ");
+                
             }
         }
     }

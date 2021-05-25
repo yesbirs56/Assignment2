@@ -6,7 +6,7 @@ namespace Assignment1
 {
     internal class DateDifference
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Enter the Date in MM/dd/yyyy format :");
             Console.Write("For example if date is 1 March 2001");

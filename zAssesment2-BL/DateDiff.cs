@@ -5,8 +5,8 @@ namespace Assesment2_BL
     public class DateDiff
     {
         private readonly static int[] _daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-        readonly private DateTime StartDate;
-        readonly private DateTime EndDate;
+        readonly private DateTime _startDate;
+        readonly private DateTime _endDate;
 
         /// <summary>
         /// Total Number of days between StartDate and EndDate
@@ -68,13 +68,13 @@ namespace Assesment2_BL
         {
             if (ValidateDateOrder(startDate, endDate))
             {
-                this.StartDate = startDate;
-                this.EndDate = endDate;
+                this._startDate = startDate;
+                this._endDate = endDate;
             }
             else
             {
-                this.EndDate = startDate;
-                this.StartDate = endDate;
+                this._endDate = startDate;
+                this._startDate = endDate;
             }
             this.TotalDays = SetDaysDiff();
             (this.Days, this.Months, this.Years) = SetProps();
@@ -83,19 +83,19 @@ namespace Assesment2_BL
         //Function contains logic to calculate Days Months and Years
         private (int, int, int) SetProps()
         {
-            if (IsLeapYear(this.EndDate.Year))
+            if (IsLeapYear(this._endDate.Year))
             {
                 _daysInMonth[1] = 29;
             }
-            int yearDiff = EndDate.Year - StartDate.Year;
-            int monthDiff = (EndDate.Month - StartDate.Month);
-            int dayDiff = EndDate.Day - StartDate.Day;
+            int yearDiff = _endDate.Year - _startDate.Year;
+            int monthDiff = (_endDate.Month - _startDate.Month);
+            int dayDiff = _endDate.Day - _startDate.Day;
 
             //If dayDiff is negative then month decreases
             if (dayDiff < 0)
             {
                 monthDiff--;
-                dayDiff = _daysInMonth[(EndDate.Month + 12 - 2) % 12] - StartDate.Day + EndDate.Day;
+                dayDiff = _daysInMonth[(this._endDate.Month + 12 - 2) % 12] - this._startDate.Day + this._endDate.Day;
             }
             //If monthDiff is negative year is decrease
             if (monthDiff < 0)
@@ -109,7 +109,7 @@ namespace Assesment2_BL
         // Function to set Total days
         private double SetDaysDiff()
         {
-            TimeSpan diff = this.EndDate - this.StartDate;
+            TimeSpan diff = this._endDate - this._startDate;
             double daysDiff = diff.TotalDays;
 
             return daysDiff;

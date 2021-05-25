@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Text;
 
 namespace Assesment2_BL
 {
@@ -12,9 +9,8 @@ namespace Assesment2_BL
     /// </summary>
     public static class DirectoryTree
     {
-
         //String builder object to store Directory tree structure
-        private static StringBuilder _structure = new StringBuilder("");
+        private readonly static StringBuilder _structure = new StringBuilder("");
 
         /// <summary>
         /// Print the Structure of the given directory
@@ -27,22 +23,17 @@ namespace Assesment2_BL
         /// <return>string contain the structure tree information</return>
         public static string GetStructure(string path)
         {
-            PrintTree(path,"");
+            PrintTree(path, "");
             return _structure.ToString();
         }
 
-        
-
-
-        // Recursive function To Print the structure of the Tree 
-        private static void PrintTree(string path, string spaces="")
+        // Recursive function To Print the structure of the Tree
+        private static void PrintTree(string path, string spaces = "")
         {
-
             DirectoryInfo root = null;
             try
             {
                 root = new DirectoryInfo(path);
-
             }
             catch (ArgumentException)
             {
@@ -57,7 +48,6 @@ namespace Assesment2_BL
             try
             {
                 files = root.GetFiles();
-
             }
             catch (DirectoryNotFoundException)
             {
@@ -67,28 +57,19 @@ namespace Assesment2_BL
             {
                 throw;
             }
-            
 
             foreach (FileInfo file in files)
             {
-                
                 _structure.AppendLine($"{spaces + "-"}{file.Name}");
-
             }
 
             DirectoryInfo[] folders = root.GetDirectories();
             foreach (DirectoryInfo folder in folders)
             {
-                
-                _structure.AppendLine( $"{spaces + "--"}{folder.Name}");
+                _structure.AppendLine($"{spaces + "--"}{folder.Name}");
                 // Calling recursion on subfolder (depth first approach) with added spaces
                 PrintTree(path + $@"\{folder.Name}", spaces + "  ");
-                
             }
         }
     }
-
-   
-
-
 }

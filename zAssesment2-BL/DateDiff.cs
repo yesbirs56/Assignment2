@@ -4,10 +4,10 @@ namespace Assesment2_BL
 {
     public class DateDiff
     {
-        
         private readonly static int[] _daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-        readonly private DateTime StartDate ;
-        readonly private DateTime EndDate ;
+        readonly private DateTime StartDate;
+        readonly private DateTime EndDate;
+
         /// <summary>
         /// Total Number of days between StartDate and EndDate
         /// </summary>
@@ -32,10 +32,9 @@ namespace Assesment2_BL
         private static bool ValidateDateOrder(DateTime startDate, DateTime endDate)
         {
             int compareResult = startDate.CompareTo(endDate);
-            
+
             if (compareResult > 0)
             {
-                
                 return false;
             }
             else
@@ -43,6 +42,7 @@ namespace Assesment2_BL
                 return true;
             }
         }
+
         //Function return boolean value to indicate EndDate is LeapYear or Not
         private static bool IsLeapYear(int year)
         {
@@ -66,7 +66,7 @@ namespace Assesment2_BL
         /// <param name="endDate"> End Date</param>
         public DateDiff(DateTime startDate, DateTime endDate)
         {
-            if(ValidateDateOrder(startDate, endDate))
+            if (ValidateDateOrder(startDate, endDate))
             {
                 this.StartDate = startDate;
                 this.EndDate = endDate;
@@ -77,10 +77,10 @@ namespace Assesment2_BL
                 this.StartDate = endDate;
             }
             this.TotalDays = SetDaysDiff();
-            (this.Days, this.Months, this.Years) = SetProps(); 
+            (this.Days, this.Months, this.Years) = SetProps();
         }
 
-       //Function contains logic to calculate Days Months and Years
+        //Function contains logic to calculate Days Months and Years
         private (int, int, int) SetProps()
         {
             if (IsLeapYear(this.EndDate.Year))
@@ -91,13 +91,13 @@ namespace Assesment2_BL
             int monthDiff = (EndDate.Month - StartDate.Month);
             int dayDiff = EndDate.Day - StartDate.Day;
 
-            //If dayDiff is negative then month decreases 
+            //If dayDiff is negative then month decreases
             if (dayDiff < 0)
             {
                 monthDiff--;
                 dayDiff = _daysInMonth[(EndDate.Month + 12 - 2) % 12] - StartDate.Day + EndDate.Day;
             }
-            //If monthDiff is negative year is decrease 
+            //If monthDiff is negative year is decrease
             if (monthDiff < 0)
             {
                 monthDiff = 12 - Math.Abs(monthDiff);
@@ -106,15 +106,13 @@ namespace Assesment2_BL
             return (dayDiff, monthDiff, yearDiff);
         }
 
-
-        // Function to set Total days 
+        // Function to set Total days
         private double SetDaysDiff()
         {
             TimeSpan diff = this.EndDate - this.StartDate;
             double daysDiff = diff.TotalDays;
-            
+
             return daysDiff;
         }
-
     }
 }

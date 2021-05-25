@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace Assesment2_BL
 {
     /// <summary>
-    /// Provide the Writing the currency symbol and rate into file and give the amount in INR 
+    /// Provide the Writing the currency symbol and rate into file and give the amount in INR
     /// </summary>
     public class CurrencyConverter
     {
         // the path of the file
-        private readonly string _path ;
+        private readonly string _path;
+
         /// <summary>
         /// check if Data already exist or not
         /// </summary>
@@ -28,7 +25,7 @@ namespace Assesment2_BL
         /// Writes the Dictionary<string,double> data into file
         /// </summary>
         /// <param name="data"></param>
-        public  void WriteDataIntoFile(Dictionary<string,double>data)
+        public void WriteDataIntoFile(Dictionary<string, double> data)
         {
             FileInfo currencyData = new FileInfo(this._path);
             BinaryWriter bw = new BinaryWriter(currencyData.OpenWrite());
@@ -39,28 +36,28 @@ namespace Assesment2_BL
                 bw.Write(item.Value);
             }
             bw.Close();
-  
         }
+
         /// <summary>
         /// Gives Amount in INR
         /// </summary>
         /// <param name="symbol"></param>
         /// <param name="amount"></param>
         /// <returns>-1 if symbol is not registered else return the amount in INR</returns>
-        public double GetAmountINR(string symbol,double amount)
+        public double GetAmountINR(string symbol, double amount)
         {
-            double rate = GetRate( symbol);
+            double rate = GetRate(symbol);
             if (rate == -1)
             {
-                
                 return -1;
             }
 
             double inr = rate * amount;
             return inr;
         }
+
         // private method for getting the rate of the symbol
-        private double GetRate( string symbol)
+        private double GetRate(string symbol)
         {
             FileInfo currencyData = new FileInfo(this._path);
             BinaryReader br = new BinaryReader(currencyData.OpenRead());
@@ -78,6 +75,7 @@ namespace Assesment2_BL
             br.Close();
             return -1;
         }
+
         /// <summary>
         /// expose the Instance the Assesment2_BL.CurrencyConverter<br/>
         /// initialize with one string parameter

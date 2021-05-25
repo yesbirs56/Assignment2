@@ -12,6 +12,10 @@ namespace Assesment2_BL
     /// </summary>
     public static class DirectoryTree
     {
+
+        //String builder object to store Directory tree structure
+        private static StringBuilder _structure = new StringBuilder("");
+
         /// <summary>
         /// Print the Structure of the given directory
         /// </summary>
@@ -21,13 +25,10 @@ namespace Assesment2_BL
         /// <exception cref="UnauthorizedAccessException">When access a unauthorised directory </exception>
         /// <param name="path">Contains the path of the Directory</param>
         /// <return>string contain the structure tree information</return>
-
-        //String builder object to store Directory tree structure
-        private static StringBuilder structure = new StringBuilder("");
         public static string GetStructure(string path)
         {
             PrintTree(path,"");
-            return structure.ToString();
+            return _structure.ToString();
         }
 
         
@@ -71,7 +72,7 @@ namespace Assesment2_BL
             foreach (FileInfo file in files)
             {
                 
-                structure.AppendLine($"{spaces + " -"}{file.Name}");
+                _structure.AppendLine($"{spaces + "-"}{file.Name}");
 
             }
 
@@ -79,7 +80,7 @@ namespace Assesment2_BL
             foreach (DirectoryInfo folder in folders)
             {
                 
-                structure.AppendLine( $"{spaces + "--"}{folder.Name}");
+                _structure.AppendLine( $"{spaces + "--"}{folder.Name}");
                 // Calling recursion on subfolder (depth first approach) with added spaces
                 PrintTree(path + $@"\{folder.Name}", spaces + "  ");
                 

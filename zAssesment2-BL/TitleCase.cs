@@ -33,9 +33,8 @@ namespace Assesment2_BL
                 "on"
             };
 
-
         /// <summary>
-        /// Convert the sentence into TitleCase 
+        /// Convert the sentence into TitleCase
         /// </summary>
         /// <param name="sentence"></param>
         /// <returns>converted title case string </returns>

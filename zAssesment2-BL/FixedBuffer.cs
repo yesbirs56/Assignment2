@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assesment2_BL
 {
     /// <summary>
-    /// Type Fixed buffer is Wrapper for System.Collections.Generic.Queue 
+    /// Type Fixed buffer is Wrapper for System.Collections.Generic.Queue
     /// </summary>
     public class FixedBuffer
     {
         private readonly int _size;
         private readonly Queue<string> _buffer;
+
         /// <summary>
         /// Add Data into Buffer
         /// </summary>
         /// <param name="data"></param>
         public void AddData(string data)
         {
-           
             this._buffer.Enqueue(data);
         }
 
@@ -47,8 +44,8 @@ namespace Assesment2_BL
             {
                 throw;
             }
-           
         }
+
         /// <summary>
         /// Get the Oldest Data
         /// </summary>
@@ -68,7 +65,6 @@ namespace Assesment2_BL
             return this._size == this._buffer.Count;
         }
 
-       
         /// <summary>
         /// Return the data inside buffer
         /// </summary>
@@ -76,8 +72,8 @@ namespace Assesment2_BL
         public string[] GetBufferData()
         {
             return this._buffer.ToArray();
-
         }
+
         /// <summary>
         /// initialize the new instance of Fixed Buffer
         /// </summary>

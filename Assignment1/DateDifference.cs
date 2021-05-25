@@ -62,6 +62,7 @@ namespace Assignment1
             
 
         }
+        // Function to Validate StartDate return true if start date is valid  else false
         private static bool ValidateStartDate(DateTime startDate)
         {
             if (startDate.CompareTo(_today)>=0){
@@ -70,6 +71,7 @@ namespace Assignment1
             return true;
         }
 
+        //Function to Validate EndDate returns true if end date is valid or false if not
         private static bool ValidateEndDate(DateTime endDate, DateTime startDate)
         {
             if (endDate.CompareTo(startDate) <= 0)
@@ -79,9 +81,7 @@ namespace Assignment1
             return true;
         }
 
-
-
-
+        //Funtion to Validte Date String return true if dateString is Valid or false if not
         private static bool ValidateDateString(string dateString)
         {
             if (dateString.Length == 0)
